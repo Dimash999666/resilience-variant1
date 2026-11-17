@@ -1,0 +1,1578 @@
+{
+  "version": "2.3.0",
+  "summary": {
+    "title": "Вариант 1 - наземный сегмент спутников ДЗЗ",
+    "owner": "",
+    "description": "DFD для задания 6: передача команд в окно радиовидимости",
+    "id": 0
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [
+      {
+        "version": "2.3.0",
+        "title": "DFD передачи команд",
+        "description": "",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "diagramType": "STRIDE",
+        "id": 0,
+        "cells": [
+          {
+            "position": {
+              "x": 220,
+              "y": 10
+            },
+            "size": {
+              "width": 560,
+              "height": 400
+            },
+            "attrs": {
+              "label": {
+                "text": "ЦУП (внутренняя сеть)"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "zIndex": -1,
+            "id": "041b9e5d-ad78-4b4a-8954-08805f9dab16",
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "ЦУП (внутренняя сеть)",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
+              "x": 840,
+              "y": 10
+            },
+            "size": {
+              "width": 260,
+              "height": 400
+            },
+            "attrs": {
+              "label": {
+                "text": "Наземные станции (внешний провайдер)"
+              }
+            },
+            "visible": true,
+            "shape": "trust-boundary-box",
+            "zIndex": -1,
+            "id": "a2bb9ee8-1d46-4f42-94d0-e854c8b5d919",
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Наземные станции (внешний провайдер)",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
+              "x": 20,
+              "y": 60
+            },
+            "size": {
+              "width": 150,
+              "height": 70
+            },
+            "visible": true,
+            "shape": "actor",
+            "zIndex": 2,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "0f60df4d-572a-4397-a062-4d009ebe0189"
+                },
+                {
+                  "group": "right",
+                  "id": "8b639f06-b2d2-42a5-93c2-2623abf66926"
+                },
+                {
+                  "group": "bottom",
+                  "id": "96e72447-d939-401b-8fc8-a578e2818ff3"
+                },
+                {
+                  "group": "left",
+                  "id": "ceb1f857-6b7d-41b5-8dcc-0742ec0d634a"
+                }
+              ]
+            },
+            "id": "4e62578f-076b-4930-ba1e-ff1865b3cce6",
+            "data": {
+              "name": "Оператор ЦУП",
+              "description": "",
+              "type": "tm.Actor",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "title": "Вход под чужой учетной записью",
+                  "type": "Spoofing",
+                  "description": "Злоумышленник входит в консоль оператора с украденным паролем и отправляет команды.",
+                  "mitigation": "MFA для операторов.",
+                  "modelType": "STRIDE",
+                  "id": "13639041-79bb-4794-976f-98cb3ef4615e"
+                }
+              ],
+              "hasOpenThreats": true,
+              "providesAuthentication": false
+            },
+            "attrs": {
+              "text": {
+                "text": "Оператор ЦУП"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": ""
+              }
+            }
+          },
+          {
+            "position": {
+              "x": 290,
+              "y": 40
+            },
+            "size": {
+              "width": 120,
+              "height": 120
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 2,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "524027c2-f876-45ae-8fb7-29e94de40d9b"
+                },
+                {
+                  "group": "right",
+                  "id": "c4eae925-a64f-4a49-9151-8b009c2916dc"
+                },
+                {
+                  "group": "bottom",
+                  "id": "08780ecf-2854-4145-84ce-bd92e64c1d09"
+                },
+                {
+                  "group": "left",
+                  "id": "d97ddf20-44bb-465d-a046-565f946f0a69"
+                }
+              ]
+            },
+            "id": "ff519930-555f-45ba-b287-ed6618d8c806",
+            "data": {
+              "name": "Сервер управления\nполетом (core)",
+              "description": "",
+              "type": "tm.Process",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "title": "Отрицание отправки команды",
+                  "type": "Repudiation",
+                  "description": "Оператор отрицает, что отправил команду, которая привела к сбою.",
+                  "mitigation": "Журнал команд с подписью оператора, только на добавление.",
+                  "modelType": "STRIDE",
+                  "id": "40152367-9782-4a9e-b6b1-b13345d5f1d0"
+                },
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "title": "Флуд запросами перед окном видимости",
+                  "type": "Denial of service",
+                  "description": "Поток запросов перегружает сервер, и команды не уходят в окно видимости.",
+                  "mitigation": "Rate limiting, bulkhead для команд.",
+                  "modelType": "STRIDE",
+                  "id": "b7e99884-61cc-4178-8c51-7cec05f3056a"
+                }
+              ],
+              "hasOpenThreats": true,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": ""
+            },
+            "attrs": {
+              "text": {
+                "text": "Сервер управления\nполетом (core)"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": ""
+              }
+            }
+          },
+          {
+            "position": {
+              "x": 560,
+              "y": 70
+            },
+            "size": {
+              "width": 170,
+              "height": 80
+            },
+            "visible": true,
+            "shape": "store",
+            "zIndex": 2,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "98990151-74ca-47c9-b5ca-fb0469aa57f5"
+                },
+                {
+                  "group": "right",
+                  "id": "22841645-f10b-47b3-85e9-aa8c81b925ca"
+                },
+                {
+                  "group": "bottom",
+                  "id": "ec55b508-dbae-4ad7-a52e-e53e56c69a73"
+                },
+                {
+                  "group": "left",
+                  "id": "7825d9a7-9549-4092-91f6-59a8b2adb2b5"
+                }
+              ]
+            },
+            "id": "a6c61022-3a4f-4cec-9381-585f452b2891",
+            "data": {
+              "name": "БД команд\nи телеметрии",
+              "description": "",
+              "type": "tm.Store",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "title": "Подмена плана в базе",
+                  "type": "Tampering",
+                  "description": "Изменение плана команд в БД до отправки.",
+                  "mitigation": "Контроль целостности, журнал изменений.",
+                  "modelType": "STRIDE",
+                  "id": "197e7ff6-77f6-4d95-80c5-68a8cbf5bec0"
+                },
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "title": "Запись в очередь команд от имени аналитика",
+                  "type": "Elevation of privilege",
+                  "description": "Учетная запись аналитика получает право записи в очередь команд.",
+                  "mitigation": "RBAC, запись только у сервиса планирования.",
+                  "modelType": "STRIDE",
+                  "id": "b0f009a7-9c49-4def-b361-40dd5132f6ca"
+                }
+              ],
+              "hasOpenThreats": true,
+              "isALog": false,
+              "storesCredentials": false,
+              "isEncrypted": false,
+              "isSigned": false
+            },
+            "attrs": {
+              "text": {
+                "text": "БД команд\nи телеметрии"
+              },
+              "topLine": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": ""
+              },
+              "bottomLine": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "strokeDasharray": ""
+              }
+            }
+          },
+          {
+            "position": {
+              "x": 290,
+              "y": 260
+            },
+            "size": {
+              "width": 120,
+              "height": 120
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 2,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "efb4d5ee-c443-48ca-9c10-bbffa95bbf76"
+                },
+                {
+                  "group": "right",
+                  "id": "7af27a37-f640-4e10-98e8-2996d64488c1"
+                },
+                {
+                  "group": "bottom",
+                  "id": "20a60f84-a825-424d-b80d-cb8ef70ee0f9"
+                },
+                {
+                  "group": "left",
+                  "id": "d5674f08-34db-4663-8a76-47b98f0e0f59"
+                }
+              ]
+            },
+            "id": "e212f7d4-83cc-4702-a134-1fbc58d69bd9",
+            "data": {
+              "name": "Станция приема (A)",
+              "description": "",
+              "type": "tm.Process",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [],
+              "hasOpenThreats": false,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": ""
+            },
+            "attrs": {
+              "text": {
+                "text": "Станция приема (A)"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "strokeDasharray": ""
+              }
+            }
+          },
+          {
+            "position": {
+              "x": 900,
+              "y": 60
+            },
+            "size": {
+              "width": 130,
+              "height": 130
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 2,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "4c3c426c-6fb2-44a1-8cfe-3518a11dfbf4"
+                },
+                {
+                  "group": "right",
+                  "id": "5efaec04-e1fa-4663-9127-69d46a79538a"
+                },
+                {
+                  "group": "bottom",
+                  "id": "c07a4eba-8965-4328-8d6c-852e1834ff57"
+                },
+                {
+                  "group": "left",
+                  "id": "50fd29a7-2a49-4156-bb9a-f31e489c2b3b"
+                }
+              ]
+            },
+            "id": "ad79da62-827f-4426-8768-8c01703f8b7b",
+            "data": {
+              "name": "Наземная станция C\n(основная, dep-a)",
+              "description": "",
+              "type": "tm.Process",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [],
+              "hasOpenThreats": false,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": ""
+            },
+            "attrs": {
+              "text": {
+                "text": "Наземная станция C\n(основная, dep-a)"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "strokeDasharray": ""
+              }
+            }
+          },
+          {
+            "position": {
+              "x": 900,
+              "y": 260
+            },
+            "size": {
+              "width": 130,
+              "height": 130
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 2,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "0cb2d560-f04f-4797-98cc-69340064c110"
+                },
+                {
+                  "group": "right",
+                  "id": "eaedc4a1-61fc-4c80-87a2-29fdb6f3081f"
+                },
+                {
+                  "group": "bottom",
+                  "id": "7d0671e3-b7f4-40be-a145-875989adc215"
+                },
+                {
+                  "group": "left",
+                  "id": "677e57bf-4bec-45fc-986c-45525477dca5"
+                }
+              ]
+            },
+            "id": "e0b100b2-3a66-4028-9c9b-974921a92fde",
+            "data": {
+              "name": "Наземная станция C\n(резервная, dep-b)",
+              "description": "",
+              "type": "tm.Process",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [],
+              "hasOpenThreats": false,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": ""
+            },
+            "attrs": {
+              "text": {
+                "text": "Наземная станция C\n(резервная, dep-b)"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "strokeDasharray": ""
+              }
+            }
+          },
+          {
+            "position": {
+              "x": 1200,
+              "y": 180
+            },
+            "size": {
+              "width": 150,
+              "height": 70
+            },
+            "visible": true,
+            "shape": "actor",
+            "zIndex": 2,
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "cfaaa145-9662-4144-9360-5c89bf8cb21f"
+                },
+                {
+                  "group": "right",
+                  "id": "be6be7d6-7f2d-4ee2-9fec-ec82e2bbf9a0"
+                },
+                {
+                  "group": "bottom",
+                  "id": "c5139966-f489-4540-a197-611ba07ba35a"
+                },
+                {
+                  "group": "left",
+                  "id": "8b1e8d2b-d0e3-4330-a1b2-657a9d7de4f0"
+                }
+              ]
+            },
+            "id": "6f02e204-a757-45dd-bb5c-c731a77ebe77",
+            "data": {
+              "name": "Спутник ДЗЗ",
+              "description": "",
+              "type": "tm.Actor",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [],
+              "hasOpenThreats": false,
+              "providesAuthentication": false
+            },
+            "attrs": {
+              "text": {
+                "text": "Спутник ДЗЗ"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "strokeDasharray": ""
+              }
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": ""
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "План и команды",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": 0.5
+              }
+            ],
+            "connector": "smooth",
+            "id": "57d6ef35-3217-4918-bfae-9bf420f577e5",
+            "source": {
+              "cell": "4e62578f-076b-4930-ba1e-ff1865b3cce6"
+            },
+            "target": {
+              "cell": "ff519930-555f-45ba-b287-ed6618d8c806"
+            },
+            "data": {
+              "type": "tm.Flow",
+              "name": "План и команды",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "HTTPS",
+              "threats": [],
+              "isTrustBoundary": false
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": ""
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "Чтение / запись команд",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": 0.5
+              }
+            ],
+            "connector": "smooth",
+            "id": "75f0377a-262b-4c73-a372-26c61ed25337",
+            "source": {
+              "cell": "ff519930-555f-45ba-b287-ed6618d8c806"
+            },
+            "target": {
+              "cell": "a6c61022-3a4f-4cec-9381-585f452b2891"
+            },
+            "data": {
+              "type": "tm.Flow",
+              "name": "Чтение / запись команд",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": true,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "isTrustBoundary": false
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": ""
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "Подписанные команды",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": 0.5
+              }
+            ],
+            "connector": "smooth",
+            "id": "f994c0cc-4c28-456a-96dd-e25d74a6b699",
+            "source": {
+              "cell": "ff519930-555f-45ba-b287-ed6618d8c806"
+            },
+            "target": {
+              "cell": "e212f7d4-83cc-4702-a134-1fbc58d69bd9"
+            },
+            "data": {
+              "type": "tm.Flow",
+              "name": "Подписанные команды",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "isTrustBoundary": false
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": ""
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "Команды по каналу B",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": 0.5
+              }
+            ],
+            "connector": "smooth",
+            "id": "38c02330-091f-4459-bad1-fd2c9ce8a295",
+            "source": {
+              "cell": "e212f7d4-83cc-4702-a134-1fbc58d69bd9"
+            },
+            "target": {
+              "cell": "ad79da62-827f-4426-8768-8c01703f8b7b"
+            },
+            "data": {
+              "type": "tm.Flow",
+              "name": "Команды по каналу B",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "mTLS",
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "title": "Изменение команды в канале",
+                  "type": "Tampering",
+                  "description": "Команда изменяется в канале оператора связи между ЦУП и станцией.",
+                  "mitigation": "mTLS, подпись команды на сервере управления.",
+                  "modelType": "STRIDE",
+                  "id": "60056971-401b-487c-b2a3-8f2c9a16ecb8"
+                }
+              ],
+              "isTrustBoundary": false
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": ""
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "Команды по каналу B (резерв)",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": 0.5
+              }
+            ],
+            "connector": "smooth",
+            "id": "38bff765-487a-47d0-aebb-9aada12b29ac",
+            "source": {
+              "cell": "e212f7d4-83cc-4702-a134-1fbc58d69bd9"
+            },
+            "target": {
+              "cell": "e0b100b2-3a66-4028-9c9b-974921a92fde"
+            },
+            "data": {
+              "type": "tm.Flow",
+              "name": "Команды по каналу B (резерв)",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "mTLS",
+              "threats": [],
+              "isTrustBoundary": false
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": ""
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "Радиоканал: команды",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": 0.5
+              }
+            ],
+            "connector": "smooth",
+            "id": "bc39b032-2a60-4203-b879-2317b288cc5e",
+            "source": {
+              "cell": "ad79da62-827f-4426-8768-8c01703f8b7b"
+            },
+            "target": {
+              "cell": "6f02e204-a757-45dd-bb5c-c731a77ebe77"
+            },
+            "data": {
+              "type": "tm.Flow",
+              "name": "Радиоканал: команды",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": true,
+              "protocol": "",
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "title": "Чужая станция отправляет команды",
+                  "type": "Spoofing",
+                  "description": "Посторонняя станция передает команды на спутник от имени ЦУП.",
+                  "mitigation": "Аутентификация команд на борту (CCSDS SDLS), счетчик против повтора.",
+                  "modelType": "STRIDE",
+                  "id": "54d47de6-5b5f-4ea9-aaec-581de8d12cc9"
+                },
+                {
+                  "status": "Open",
+                  "severity": "Medium",
+                  "title": "Глушение радиоканала",
+                  "type": "Denial of service",
+                  "description": "Помехи в радиоканале срывают сеанс связи.",
+                  "mitigation": "Резервная станция в другом регионе.",
+                  "modelType": "STRIDE",
+                  "id": "7ed6a38b-f837-43e8-a26d-f342c2fa7904"
+                }
+              ],
+              "isTrustBoundary": false
+            },
+            "vertices": [
+              {
+                "x": 1150,
+                "y": 140
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": ""
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "Радиоканал: команды (резерв)",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": 0.5
+              }
+            ],
+            "connector": "smooth",
+            "id": "3596d029-a194-4fa1-91ac-2687b517c188",
+            "source": {
+              "cell": "e0b100b2-3a66-4028-9c9b-974921a92fde"
+            },
+            "target": {
+              "cell": "6f02e204-a757-45dd-bb5c-c731a77ebe77"
+            },
+            "data": {
+              "type": "tm.Flow",
+              "name": "Радиоканал: команды (резерв)",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": true,
+              "protocol": "",
+              "threats": [],
+              "isTrustBoundary": false
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": ""
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "Телеметрия и снимки",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": 0.5
+              }
+            ],
+            "connector": "smooth",
+            "id": "315a5a41-fe8c-4a7a-a36a-10ad436d2751",
+            "source": {
+              "cell": "6f02e204-a757-45dd-bb5c-c731a77ebe77"
+            },
+            "target": {
+              "cell": "ad79da62-827f-4426-8768-8c01703f8b7b"
+            },
+            "data": {
+              "type": "tm.Flow",
+              "name": "Телеметрия и снимки",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": true,
+              "protocol": "",
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "High",
+                  "title": "Перехват снимков и телеметрии",
+                  "type": "Information disclosure",
+                  "description": "Перехват нисходящего радиоканала.",
+                  "mitigation": "Шифрование канала.",
+                  "modelType": "STRIDE",
+                  "id": "56b44e75-391f-4c5d-b933-ba51b5f4c376"
+                }
+              ],
+              "isTrustBoundary": false
+            },
+            "vertices": [
+              {
+                "x": 1150,
+                "y": 60
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "diagramTop": 1,
+    "reviewer": "",
+    "threatTop": 9
+  }
+}
